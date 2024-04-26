@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:menuCategory="container">
+        <item
+            android:id="@+id/history_menu"
+            android:icon="@drawable/baseline_archive_24"
+            android:title="@string/history"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/news_menu"
+            android:icon="@drawable/baseline_article_24"
+            android:title="@string/news"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>
