@@ -134,8 +134,6 @@ class MainActivity : AppCompatActivity() {
                                 classifierScore = NumberFormat.getPercentInstance()
                                     .format(it[0].categories[0].score)
                                 binding.progressIndicator.visibility = View.GONE
-                            } else {
-                                ""
                             }
                         }
                     }
