@@ -1,13 +1,9 @@
 package com.dicoding.asclepius.database
 
-import android.net.Uri
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
-import org.checkerframework.checker.nullness.qual.NonNull
-import java.sql.Date
-import java.util.UUID
 
 @Entity
 @Parcelize

@@ -30,6 +30,8 @@ class ViewModelFactory internal constructor(
             return HistoryViewModel(mApplication) as T
         } else if (modelClass.isAssignableFrom(ResultViewModel::class.java)) {
             return ResultViewModel(mApplication) as T
+        } else if (modelClass.isAssignableFrom(NewsViewModel::class.java)) {
+            return NewsViewModel(mApplication) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }

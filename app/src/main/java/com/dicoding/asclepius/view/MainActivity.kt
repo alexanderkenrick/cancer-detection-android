@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
-        inflater.inflate(com.dicoding.asclepius.R.menu.option_menu, menu)
+        inflater.inflate(R.menu.option_menu, menu)
         return true
     }
 
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.news_menu -> {
-                val intent = Intent(this@MainActivity, HistoryActivity::class.java)
+                val intent = Intent(this@MainActivity, NewsActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             uuid = UUID.randomUUID().toString()
             val outputUri = File(filesDir, "${uuid}.jpg").toUri()
 
-            val listUri = listOf<Uri>(uri, outputUri)
+            val listUri = listOf(uri, outputUri)
             cropImage.launch(listUri)
         } else {
             Log.d("Photo Picker", "No media selected")
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onResults(results: List<Classifications>?, inferenceTime: Long) {
                     runOnUiThread {
-                        results?.let { it ->
+                        results?.let {
                             if (it.isNotEmpty() && it[0].categories.isNotEmpty()) {
                                 classifierResult = it[0].categories[0].label
                                 classifierScore = NumberFormat.getPercentInstance()

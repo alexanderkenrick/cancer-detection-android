@@ -25,8 +25,9 @@ class HistoryAdapter : ListAdapter<History, HistoryAdapter.MyViewHolder>(DIFF_CA
         holder.bind(user, holder)
     }
 
-    class MyViewHolder(val binding: ItemRowHistoryBinding) : RecyclerView.ViewHolder(binding.root) {
-        @SuppressLint("SetTextI18n")
+    class MyViewHolder(private val binding: ItemRowHistoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n", "SimpleDateFormat")
         fun bind(history: History, holder: MyViewHolder) {
             val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm")
             val date = history.date?.let { Date(it) }?.let { formatter.format(it) }

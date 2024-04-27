@@ -14,7 +14,7 @@ import com.dicoding.asclepius.viewModel.ViewModelFactory
 class HistoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHistoryBinding
 
-    private val historyViewModel by viewModels<HistoryViewModel>() {
+    private val historyViewModel by viewModels<HistoryViewModel> {
         ViewModelFactory.getInstance(application)
     }
 

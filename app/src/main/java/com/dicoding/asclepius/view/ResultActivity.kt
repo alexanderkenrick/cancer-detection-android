@@ -11,16 +11,14 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.asclepius.database.History
 import com.dicoding.asclepius.databinding.ActivityResultBinding
-import com.dicoding.asclepius.viewModel.HistoryViewModel
 import com.dicoding.asclepius.viewModel.ResultViewModel
 import com.dicoding.asclepius.viewModel.ViewModelFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.UUID
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
-    private val resultViewModel by viewModels<ResultViewModel>() {
+    private val resultViewModel by viewModels<ResultViewModel> {
         ViewModelFactory.getInstance(application)
     }
 
@@ -49,10 +47,10 @@ class ResultActivity : AppCompatActivity() {
         }
         binding.resultText.text = "$detectedText $detectedScore"
 
-        binding.btnSave.setOnClickListener() {
+        binding.btnSave.setOnClickListener {
             lifecycleScope.launch(Dispatchers.Default) {
                 val currentTime = System.currentTimeMillis()
-                val history: History =
+                val history =
                     History(uuid, imageUri.toString(), detectedText, detectedScore, currentTime)
                 resultViewModel.addHistory(history)
                 workerThread("Added to History", binding)

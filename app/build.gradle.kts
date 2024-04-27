@@ -24,16 +24,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildTypes {
-            debug {
-                buildConfigField("String", "API_KEY", "\"Bearer edc44bec19ae408aa5186fc4dee06ca4\"")
-                buildConfigField("String", "BASE_URL", "\"https://newsapi.org/\"")
-            }
-            release {
-                buildConfigField("String", "API_KEY", "\"Bearer edc44bec19ae408aa5186fc4dee06ca4\"")
-                buildConfigField("String", "BASE_URL", "\"https://newsapi.org/\"")
-            }
-        }
+        buildConfigField("String", "API_KEY", "\"edc44bec19ae408aa5186fc4dee06ca4\"")
+        buildConfigField("String", "BASE_URL", "\"https://newsapi.org/\"")
     }
 
     buildTypes {
@@ -43,7 +35,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
         }
+        debug {
+
+        }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -85,4 +82,6 @@ dependencies {
     ksp("androidx.room:room-compiler:2.5.2")
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

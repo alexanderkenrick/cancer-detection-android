@@ -13,4 +13,5 @@
     <string name="history">History</string>
     <string name="news">News</string>
     <string name="no_history_available">No History Available</string>
+    <string name="can_not_retrieve_data">Can not retrieve data</string>
 </resources>
