@@ -26,7 +26,6 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Menampilkan hasil gambar, prediksi, dan confidence score.
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

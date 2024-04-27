@@ -91,7 +91,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startGallery() {
-        // TODO: Mendapatkan gambar dari Gallery.
         launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
     }
     private val launcherGallery = registerForActivityResult(
@@ -109,7 +108,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showImage() {
-        // TODO: Menampilkan gambar sesuai Gallery yang dipilih.
         currentImageUri?.let {
             Log.d("Image URI", "showImage: $it")
             binding.previewImageView.setImageURI(it)
@@ -117,7 +115,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun analyzeImage(imageUri: Uri) {
-        // TODO: Menganalisa gambar yang berhasil ditampilkan.
         binding.progressIndicator.visibility = View.VISIBLE
         imageClassifierHelper = ImageClassifierHelper(
             context = this,
@@ -150,7 +147,7 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(ResultActivity.EXTRA_UUID, uuid)
-        intent.putExtra(ResultActivity.EXTRA_IMAGE_URI, currentImageUri.toString())
+        intent.putExtra(ResultActivity.EXTRA_IMAGE_URI, imageUri.toString())
         intent.putExtra(ResultActivity.EXTRA_RESULT, classifierResult)
         intent.putExtra(ResultActivity.EXTRA_SCORE, classifierScore)
         startActivity(intent)

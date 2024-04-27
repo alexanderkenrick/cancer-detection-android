@@ -33,7 +33,6 @@ class ImageClassifierHelper(
     }
 
     private fun setupImageClassifier() {
-        // TODO: Menyiapkan Image Classifier untuk memproses gambar.
         val optionsBuilder = ImageClassifier.ImageClassifierOptions.builder()
             .setScoreThreshold(threshold)
             .setMaxResults(maxResults)
@@ -54,7 +53,6 @@ class ImageClassifierHelper(
     }
 
     fun classifyStaticImage(imageUri: Uri) {
-        // TODO: mengklasifikasikan imageUri dari gambar statis.
         if (imageClassifier == null) {
             setupImageClassifier()
         }
